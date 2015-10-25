@@ -117,25 +117,69 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="home">
               <paper-material elevation="1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <google-chart type='pie'
+                  options='{"title": "Distribution of days in 2001Q1"}'
+                  cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+                  rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+                </google-chart>
+
                 <ix-apod></ix-apod>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </paper-material>
 
             </section>
 
             <section data-route="users">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
+                <google-chart type='pie' options='{"title": "Distribution of days in 2001Q1"}' cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]' rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+                </google-chart>
               </paper-material>
             </section>
 
             <section data-route="user-info">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
+                  User:
+                  <span>{{params.name}}</span>
                 </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
+                <div>This is
+                  <span>{{params.name}}</span>'s section</div>
               </paper-material>
             </section>
 

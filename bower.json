@@ -2,6 +2,7 @@
   "name": "polymer-starter-kit",
   "private": true,
   "dependencies": {
+    "google-chart": "~1.0.3",
     "iron-elements": "PolymerElements/iron-elements#1.0.0",
     "ix-apod": "michelschep/ix-apod",
     "neon-elements": "PolymerElements/neon-elements#1.0.0",
