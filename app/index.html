@@ -70,19 +70,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-          <a data-route="home" href="/">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+          <a data-route="ix-apod" href="/">
+            <iron-icon icon="star"></iron-icon>
+            <span>APOD</span>
           </a>
 
-          <a data-route="users" href="/users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+          <a data-route="google-chart" href="/google-chart">
+            <iron-icon icon="star"></iron-icon>
+            <span>Google Chart</span>
           </a>
 
-          <a data-route="contact" href="/contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
+          <a data-route="ix-bbq" href="/ix-bbq">
+            <iron-icon icon="star"></iron-icon>
+            <span>BBQ</span>
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
@@ -101,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Demo page APOD web component</div>
+            <div class="app-name">Demo page Web Component</div>
           </div>
 
           <!-- Application sub title -->
@@ -115,71 +115,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="home">
+            <section data-route="ix-apod">
               <paper-material elevation="1">
+                <ix-apod></ix-apod>
+              </paper-material>
+            </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <section data-route="google-chart">
+              <paper-material elevation="1">
                 <google-chart type='pie'
                   options='{"title": "Distribution of days in 2001Q1"}'
                   cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
                   rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
                 </google-chart>
-
-                <ix-apod></ix-apod>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              </paper-material>
-
-            </section>
-
-            <section data-route="users">
-              <paper-material elevation="1">
-                <google-chart type='pie' options='{"title": "Distribution of days in 2001Q1"}' cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]' rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
-                </google-chart>
               </paper-material>
             </section>
 
-            <section data-route="user-info">
+            <section data-route="ix-bbq">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                  User:
-                  <span>{{params.name}}</span>
-                </h2>
-                <div>This is
-                  <span>{{params.name}}</span>'s section</div>
+                <h1>Is het vandaag BBQ weer??</h1>
+                <ix-bbq answer="{{data}}"></ix-bbq>
+                <dev-json json="[[data]]"></dev-json>
+                <ix-console-log title="Is het BBQ weer?" object="[[data]]"></ix-console-log>
+
+                <a href="https://github.com/michelschep/ix-bbq" target="_blank">ix-bbq on GitHub</a>
               </paper-material>
             </section>
 
@@ -194,24 +153,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>
-
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
-
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-                         precache-file="precache.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    -->
-
   </template>
 
   <!-- build:js scripts/app.js -->
